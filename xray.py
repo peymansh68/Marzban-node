@@ -27,6 +27,35 @@ class XRayConfig(dict):
 
         super().__init__(config)
         self._apply_api()
+               # ——————————————————————— CUSTOM OUTBOUND & ROUTING (EXACT REPLACEMENT - NO API FORCING) ———————————————————————
+        import os
+        custom_file = "/var/lib/marzban-node/custom-outbound.json"
+
+        if os.path.exists(custom_file):
+            try:
+                with open(custom_file, "r", encoding="utf-8") as f:
+                    custom = json.load(f)
+
+                # جایگزینی کامل outbounds اگر در فایل سفارشی وجود داشت (ترتیب و محتوا دقیقاً حفظ می‌شه)
+                if "outbounds" in custom:
+                    self["outbounds"] = custom["outbounds"]
+                    logger.info(f"[CUSTOM] {len(custom['outbounds'])} outbound(s) loaded from custom file (exact order & content preserved)")
+
+                # جایگزینی کامل routing اگر در فایل سفارشی وجود داشت
+                if "routing" in custom:
+                    self["routing"] = custom["routing"]
+                    rules_count = len(custom["routing"].get("rules", []))
+                    logger.info(f"[CUSTOM] Custom routing applied ({rules_count} rules)")
+
+                logger.info("[CUSTOM] Custom config applied successfully (no changes to order or API)")
+
+            except json.JSONDecodeError as e:
+                logger.error(f"[CUSTOM] JSON syntax error in {custom_file}: {e}")
+            except Exception as e:
+                logger.error(f"[CUSTOM] Failed to load custom config: {e}")
+        else:
+            logger.info("[CUSTOM] No custom config found — using panel defaults")
+        # ———————————————————————————————————————————————————————————————————————————————————————
 
     def to_json(self, **json_kwargs):
         return json.dumps(self, **json_kwargs)
