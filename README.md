@@ -1,22 +1,17 @@
 # Marzban-node
 
-## Quick install
-Install Marzban-node on your server using this command
+## manusl installation
+1. Install curl socat git and docker
 ```bash
-sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban-node.sh)" @ install
+apt install curl socat git -y && curl -fsSL https://get.docker.com | sh
 ```
-Install Marzban-node on your server using this command with custom name:
+2. clone marzban-node and run 
 ```bash
-sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban-node.sh)" @ install --name marzban-node2
+git clone https://github.com/peymansh68/Marzban-node && cd Marzban-node && docker compose up -d
 ```
-Or you can only install this script (marzban-node command) on your server by using this command
-```bash
-sudo bash -c "$(curl -sL https://github.com/Gozargah/Marzban-scripts/raw/master/marzban-node.sh)" @ install-script
-```
-
-Use `help` to view all commands:
-```marzban-node help```
+if you want seperate outbound and routing from master you need to create a file name "custom-outbound.json" in /var/lib/marzban-node folder
+if custom-outbound.json is not exist it uses outbounds and routing defined in Master
 
 
-## Manual install
+## More Info
 Read the setup guide here: https://gozargah.github.io/marzban/docs/marzban-node
