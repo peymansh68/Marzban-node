@@ -1,4 +1,4 @@
-# Marzban-node
+# Marzban-node current xray version is v25.10.15
 
 ## manual installation
 1. Install curl socat git and docker
@@ -10,7 +10,7 @@ apt install curl socat git -y && curl -fsSL https://get.docker.com | sh
 git clone https://github.com/peymansh68/Marzban-node && cd Marzban-node
 ```
 if you want to install other xray version you should set RELEASE_TAG="latest" in intallxray.sh file 
-for example 
+.
 just edit first line RELEASE_TAG="v25.10.15"
 
 2. run 
