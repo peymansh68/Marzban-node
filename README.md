@@ -7,7 +7,7 @@ apt install curl socat git -y && curl -fsSL https://get.docker.com | sh
 ```
 2. clone marzban-node and run 
 ```bash
-git clone https://github.com/peymansh68/Marzban-node && cd Marzban-node && docker compose up -d
+git clone https://github.com/peymansh68/Marzban-node && cd Marzban-node
 ```
 if you want to install other xray version you should set RELEASE_TAG="latest" in intallxray.sh file 
 for example 
