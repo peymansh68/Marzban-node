@@ -13,14 +13,14 @@ if you want to install other xray version you should set RELEASE_TAG="latest" in
 .
 just edit first line RELEASE_TAG="v25.10.15"
 
-2. run 
+3. run 
 ```bash
 docker compose up -d
 ```
 
 if you want seperate outbound and routing from master you need to create a file name "custom-outbound.json" in /var/lib/marzban-node folder
 if custom-outbound.json is not exist it uses outbounds and routing defined in Master
-Tip: first routle of routing must be api
+Tip: first roule of routing must be api
 there is an example of outbound and routing you could find it
 
 
