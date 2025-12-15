@@ -37,54 +37,11 @@
         "type": "field",
         "outboundTag": "DIRECT",
         "domain": [
-          "domain:ipnumberia.com",
-          "domain:akamaihd.net",
-          "domain:messenger.com",
-          "domain:m.me",
-          "domain:facebook.net",
-          "domain:meta.com",
-          "domain:fbsbx.com",
-          "domain:workplace.com",
-          "domain:facebookcatalog.com",
-          "domain:oculus.com",
-          "domain:fb.gg",
-          "domain:workrooms.com",
-          "domain:accountkit.com",
-          "domain:edgesuite.net",
-          "domain:ig.me",
-          "domain:instagr.am",
-          "domain:igsonar.com",
-          "domain:instagram.com",
-          "domain:cdninstagram.com",
-          "domain:fbcdn.net",
-          "domain:whatsapp.com",
-          "domain:whatsapp.net",
-          "domain:facebook.com",
-          "domain:fb.com",
-          "domain:telegram.org",
-          "domain:telesco.pe",
-          "domain:tg.dev",
-          "domain:telegram.me",
-          "domain:ookla.com",
-          "domain:ipaddress.my",
-          "domain:t.me",
-          "domain:google.com"
+          "domain:test.test.test",
         ],
         "ip": [
           "0.0.0.0/0",
           "::/0"
-        ]
-      },
-      {
-        "type": "field",
-        "outboundTag": "DIRECT",
-        "ip": [
-          "1.1.1.0/24",
-          "1.0.0.0/24",
-          "2606:4700:4700::/48",
-          "8.8.8.0/24",
-          "8.8.4.0/24",
-          "2001:4860:4860::/48"
         ]
       },
       {
@@ -101,11 +58,6 @@
         "ip": [
           "geoip:private"
         ]
-      },
-      {
-        "type": "field",
-        "outboundTag": "blackhole",
-        "port": "22,25,2525,587,465"
       },
       {
         "type": "field",
