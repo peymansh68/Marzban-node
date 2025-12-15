@@ -23,6 +23,17 @@ if custom-outbound.json is not exist it uses outbounds and routing defined in Ma
 Tip: first roule of routing must be api
 there is an example of outbound and routing you could find it
 
+how to remove image and recreate the project? it is usefull "when you want to change xray version"
+step 1:
+```bash
+docker compose down --remove-orphans --rmi all
+```
+step 2:
+now you can run docker compose up -d it will create the new image
+```bash
+docker compose up -d
+```
+
 
 
 ## More Info
